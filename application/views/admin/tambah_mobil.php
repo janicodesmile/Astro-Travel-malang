@@ -1,0 +1,60 @@
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          <h1 class="h3 mb-4 text-gray-800"><?= $judul?></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?= base_url(); ?>/admin/supirmobil">Data Mobil dan Supir</a></li>
+              <li class="breadcrumb-item active"><?= $judul?></li>
+            </ol>
+          </div>
+        </div>
+
+        <?= form_open_multipart('admin/tambah_mobil');?>
+        <div class="card">
+            <div class="card-body">
+
+              <div class="callout callout-warning">
+                <h5>Jenis Mobil</h5>
+                <input type="text" name="jenis" class="form-control" placeholder="Masukkan Merek/Jenis Mobil....">
+                <?= form_error('jenis','<small class="text-danger pl-3">', '</small>'); ?>
+              </div>
+
+              <div class="callout callout-warning">
+                <h5>Plat Nomor</h5>
+                <input type="text" name="plat" class="form-control" placeholder="Masukkan Plat Nomor Mobil....">
+                <?= form_error('plat','<small class="text-danger pl-3">', '</small>'); ?>
+              </div>
+
+              <div class="callout callout-warning">
+                <h5>Gambar</h5>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="image" name="image">
+                  <label class="custom-file-label " for="image">Choose file</label>
+                </div>
+                <?= form_error('nama','<small class="text-danger pl-3">', '</small>'); ?>
+                <div class="imgWrap">
+                    <img src="" id="imgView" class="card-img-top img-fluid">
+                </div>
+                <?= form_error('image','<small class="text-danger pl-3">', '</small>'); ?>
+              </div>
+
+              <input type="submit" name="tambah_mobil" class="btn btn-info float-sm-right" value="Tambah Mobil">
+              </a>
+              <a href="<?= base_url();?>admin/supirmobil" class="btn btn-danger float-sm-right">
+              <i class="far fa-times-circle"></i> Batal
+              </a>
+            </div>
+        </div>    
+      </form>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
